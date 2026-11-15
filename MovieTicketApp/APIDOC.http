@@ -1,0 +1,139 @@
+
+### USER REGISTRATION
+###
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "adi",
+    "email": "adi@gmail.com",
+    "password": "adi@123"
+}
+
+
+### MOVIE LIST----------------------------------------------
+###
+GET http://127.0.0.1:8000/movies/
+Authorization: Basic adi:adi@123
+
+
+### ADD MOVIE
+###
+POST http://127.0.0.1:8000/movies/
+Content-Type: application/json
+Authorization: Basic adi:adi@123
+
+{
+    "title": "Interstellar",
+    "description": "A team of explorers travels through a wormhole in space.",
+    "genre": "Sci-Fi",
+    "duration": 169,
+    "release_date": "2014-11-07"
+}
+
+
+### GET SINGLE MOVIE
+###
+GET http://127.0.0.1:8000/movies/1/
+Authorization: Basic adi:adi@123
+
+
+### UPDATE MOVIE
+###
+PUT http://127.0.0.1:8000/movies/2/
+Content-Type: application/json
+Authorization: Basic adi:adi@123
+
+{
+    "title": "Interstellar",
+    "description": "An exploration of space and time.",
+    "genre": "Sci-Fi",
+    "duration": 169,
+    "release_date": "2014-11-07"
+}
+
+
+### DELETE MOVIE
+###
+DELETE http://127.0.0.1:8000/movies/2/
+Authorization: Basic adi:adi@123
+
+
+### SHOW LIST------------------------------------------------------------------------------
+###
+GET http://127.0.0.1:8000/shows/
+Authorization: Basic adi:adi@123
+
+
+### CREATE SHOW
+###
+POST http://127.0.0.1:8000/shows/
+Content-Type: application/json
+Authorization: Basic adi:adi@123
+
+{
+    "movie": 1,
+    "show_date": "2026-12-20",
+    "show_time": "18:30:00",
+    "theatre": "PVR Cinemas",
+    "ticket_price": "150.00",
+    "total_seats": 100
+}
+
+
+### GET SINGLE SHOW
+###
+GET http://127.0.0.1:8000/shows/3/
+Authorization: Basic adi:adi@123
+
+
+### UPDATE SHOW
+###
+PUT http://127.0.0.1:8000/shows/1/
+Content-Type: application/json
+Authorization: Basic adi:adi@123
+
+{
+    "movie": 1,
+    "show_date": "2026-12-21",
+    "show_time": "20:00:00",
+    "theatre": "PVR Cinemas",
+    "ticket_price": "180.00",
+    "total_seats": 100
+}
+
+
+### DELETE SHOW
+###
+DELETE http://127.0.0.1:8000/shows/1/
+Authorization: Basic adi:adi@123
+
+
+### VIEW MY BOOKINGS-------------------------------------------------------------------------------------
+###
+GET http://127.0.0.1:8000/bookings/
+Authorization: Basic adi:adi@123
+
+
+### BOOK TICKETS
+###
+POST http://127.0.0.1:8000/bookings/
+Content-Type: application/json
+Authorization: Basic adi:adi@123
+
+{
+    "show": 3,
+    "number_of_seats": 3
+}
+
+
+### VIEW SINGLE BOOKING
+###
+GET http://127.0.0.1:8000/bookings/1/
+Authorization: Basic adi:adi@123
+
+
+### CANCEL BOOKING
+###
+DELETE http://127.0.0.1:8000/bookings/1/
+Authorization: Basic adi:adi@123
