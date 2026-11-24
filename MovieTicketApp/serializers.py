@@ -23,9 +23,24 @@ class MovieSerializers(serializers.ModelSerializer):
 
 
 class ShowSerializers(serializers.ModelSerializer):
+
+    movie_title = serializers.CharField(
+        source='movie.title',
+        read_only=True
+    )
+
     class Meta:
         model = ShowDb
-        fields = '__all__'
+        fields = [
+            'id',
+            'movie',
+            'movie_title',
+            'show_date',
+            'show_time',
+            'theatre',
+            'ticket_price',
+            'total_seats'
+        ]
 
 
 class BookingSerializers(serializers.ModelSerializer):

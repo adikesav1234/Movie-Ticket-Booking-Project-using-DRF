@@ -21,6 +21,8 @@ from MovieTicketApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.RegisterView.as_view()),
+    path('users/', views.UserListView.as_view()),
+    path('user/', views.UserDetailView.as_view()),
     path('movies/', views.MovieListCreateView.as_view()),
     path('movies/<int:pk>/', views.MovieRetrieveUpdateDeleteView.as_view()),
     path('shows/', views.ShowListCreateView.as_view()),
